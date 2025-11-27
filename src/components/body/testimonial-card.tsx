@@ -15,7 +15,7 @@ export const TestimonialCard = ({
   imageUrl,
 }: TestimonialCardProps) => {
   return (
-    <div className="flex h-[280px] flex-1 flex-col justify-between rounded-xl bg-(--testimonial-bg) p-8">
+    <div className="flex h-[220px] md:h-[280px] w-full md:flex-1 flex-col justify-between rounded-xl bg-(--testimonial-bg) p-8">
       <div className="flex flex-1 flex-col gap-4">
         {/* Quote */}
         <Typography

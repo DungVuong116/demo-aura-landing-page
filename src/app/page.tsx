@@ -7,9 +7,11 @@ import { MeetAura } from "@/components/body/meet-aura";
 import { NumbersSection } from "@/components/body/numbers-section";
 import { PricingSection } from "@/components/body/pricing-section";
 import { SocialGrowthSection } from "@/components/body/social-growth-section";
-import { useEffect, useRef } from "react";
+import { RedirectModal } from "@/components/redirect-modal";
+import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const sectionsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
@@ -43,24 +45,9 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="my-20 flex flex-col gap-20">
-      <div
-        ref={(el) => {
-          sectionsRef.current[0] = el;
-        }}
-        className="section-animate"
-      >
-        <HeroSection />
-      </div>
-      <div
-        ref={(el) => {
-          sectionsRef.current[1] = el;
-        }}
-        className="section-animate"
-        style={{ transitionDelay: "0.1s" }}
-      >
-        <NumbersSection />
-      </div>
+    <div className="my-10 md:my-20 flex flex-col gap-20">
+      <HeroSection onOpenModal={() => setIsModalOpen(true)} />
+      <NumbersSection />
       <div
         ref={(el) => {
           sectionsRef.current[2] = el;
@@ -70,41 +57,27 @@ export default function Home() {
       >
         <CommentsSection />
       </div>
-      <div
-        ref={(el) => {
-          sectionsRef.current[3] = el;
-        }}
-        className="section-animate-left"
-        style={{ transitionDelay: "0.2s" }}
-      >
-        <SocialGrowthSection />
-      </div>
-      <div
-        ref={(el) => {
-          sectionsRef.current[4] = el;
-        }}
-        className="section-animate-right"
-        style={{ transitionDelay: "0.25s" }}
-      >
-        <MeetAura />
-      </div>
-      <div
-        ref={(el) => {
-          sectionsRef.current[5] = el;
-        }}
-        className="section-animate"
-        style={{ transitionDelay: "0.3s" }}
-      >
-        <FAQ />
-      </div>
-      <div
-        ref={(el) => {
-          sectionsRef.current[6] = el;
-        }}
-        className="section-animate-right"
-        style={{ transitionDelay: "0.35s" }}
-      >
-        <PricingSection />
+      <SocialGrowthSection onOpenModal={() => setIsModalOpen(true)} />
+      <MeetAura onOpenModal={() => setIsModalOpen(true)} />
+      <div className="flex flex-col-reverse md:flex-col gap-20">
+        <div
+          ref={(el) => {
+            sectionsRef.current[5] = el;
+          }}
+          className="section-animate"
+          style={{ transitionDelay: "0.3s" }}
+        >
+          <FAQ />
+        </div>
+        <div
+          ref={(el) => {
+            sectionsRef.current[6] = el;
+          }}
+          className="section-animate-right"
+          style={{ transitionDelay: "0.35s" }}
+        >
+          <PricingSection onOpenModal={() => setIsModalOpen(true)} />
+        </div>
       </div>
       <div
         ref={(el) => {
@@ -113,8 +86,13 @@ export default function Home() {
         className="section-animate"
         style={{ transitionDelay: "0.4s" }}
       >
-        <GetStarted />
+        <GetStarted onOpenModal={() => setIsModalOpen(true)} />
       </div>
+
+      <RedirectModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </div>
   );
 }

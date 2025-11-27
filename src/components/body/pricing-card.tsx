@@ -7,6 +7,7 @@ interface PricingCardProps {
   commentsPerDay: string;
   price: string;
   features: string[];
+  onPriceClick?: () => void;
 }
 
 export const PricingCard = ({
@@ -15,9 +16,10 @@ export const PricingCard = ({
   commentsPerDay,
   price,
   features,
+  onPriceClick,
 }: PricingCardProps) => {
   return (
-    <div className="flex w-[517px] flex-col rounded-xl bg-white p-8">
+    <div className="flex w-full md:w-[517px] flex-col rounded-xl bg-white p-8">
       <div className="flex flex-col gap-6">
         {/* Header and features */}
         <div className="flex flex-col gap-6">
@@ -64,7 +66,11 @@ export const PricingCard = ({
         </div>
 
         {/* Button */}
-        <Button variant="primary" className="h-12 w-fit rounded-3xl px-6">
+        <Button
+          variant="primary"
+          className="h-12 w-fit rounded-3xl px-6"
+          onClick={onPriceClick}
+        >
           <Typography
             variant="buttonSmall"
             className="text-[16px] font-medium leading-[26px] text-(--text-on-primary)"

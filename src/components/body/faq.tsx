@@ -6,28 +6,26 @@ const faqData = [
   {
     question: "Is this safe? Will my account get flagged?",
     answer:
-      "AURA operates through a dedicated U.S. phone that's separate from your main account. This keeps your personal device and account completely protected. The system mimics natural human behavior patterns, making engagement appear authentic and organic to platform algorithms.",
+      "No. AURA behaves through a physical device with human-like timing, activity patterns, and a U.S. network. No browser scripts, no automation footprints, no API risks.",
   },
   {
     question: "Do I control the phone too?",
     answer:
-      "Yes! You have full control over the dedicated creator phone. You can use it not just for AURA's engagement activities, but also for uploading your content, managing brand accounts, and running your entire social workflow. It's your device, working 24/7 for your growth.",
+      "Yes, you get your own dedicated phone that you can do anything you want with including posting content.",
     isOpen: false,
   },
   {
     question: "How fast does this happen?",
     answer:
-      "AURA works around the clock, engaging with content in your niche 24/7. You'll start seeing increased profile visits within the first few days, with follower growth typically accelerating within the first week. The system learns and optimizes over time, becoming more effective at driving traffic to your profile.",
+      "You’ll have your phone in seconds and can start getting value in 5 minutes.",
   },
   {
     question: "How many AURA + phones can I get?",
-    answer:
-      "You can scale your presence with multiple AURA + phone combinations. Each setup includes a dedicated U.S. device and AURA instance, allowing you to manage multiple accounts, niches, or brand profiles simultaneously. Contact our team to discuss multi-device packages tailored to your growth strategy.",
+    answer: "As many as you want. Time to deploy your army.",
   },
   {
     question: "How can I get help?",
-    answer:
-      "Our support team is available 24/7 to assist you. You can reach us through the in-app chat, email support, or schedule a call with our growth specialists. We also provide comprehensive documentation, video tutorials, and a community forum where successful creators share their strategies and best practices.",
+    answer: "Message us anytime at help@aura.host",
   },
 ];
 
