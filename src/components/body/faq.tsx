@@ -37,7 +37,7 @@ export const FAQ = () => {
           <div className="flex flex-col items-center gap-3">
             <Typography
               variant="h6"
-              className="whitespace-nowrap text-center text-[34px] font-medium leading-[42px] text-(--faq-text)"
+              className="text-center text-[34px] font-medium leading-[42px] text-(--faq-text)"
             >
               Frequently Asked Questions
             </Typography>

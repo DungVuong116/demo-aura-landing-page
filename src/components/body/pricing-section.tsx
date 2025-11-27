@@ -26,7 +26,7 @@ export const PricingSection = ({ onOpenModal }: PricingSectionProps) => {
   return (
     <section className="flex flex-col-reverse md:flex-row w-full items-center justify-center gap-16">
       {/* Left side - Decorative AURA image */}
-      <div className="flex gap-16">
+      <div className="flex flex-col-reverse md:flex-row gap-16">
         <div className="relative h-[421.76px] w-[253.77px] shrink-0">
           <Image
             src={auraImage}
